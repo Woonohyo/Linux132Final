@@ -20,17 +20,17 @@ public class Exam1 {
 		path2 = sc.nextLine();
 		File f2 = new File(path2);
 	
-		if ( f1.isDirectory() || f2.isDirectory() )
-			throw new Exception("디렉토리는 복사할 수 없습니다.");
-		
-		FileInputStream fis = new FileInputStream(path1);
-		FileOutputStream fos = new FileOutputStream(path2);
+		if ( !(f1.isDirectory()) ) {
+			FileInputStream fis = new FileInputStream(path1);
+			FileOutputStream fos = new FileOutputStream(path2);
 
-		int data = 0;
-		while((data=fis.read()) != -1)
-			fos.write(data);
+			int data = 0;
+			while((data=fis.read()) != -1)
+				fos.write(data);	
 		
-		fis.close();
-		fos.close();
+			fis.close();
+			fos.close();
+		} else
+			System.out.println("디렉토리는 복사할 수 없습니다.");
 	}
 }
