@@ -16,7 +16,7 @@ public class Exam3 implements Runnable {
 		Random rand = new Random();
 		Point dot = new Point();
 
-		for ( i = 0; i < QUANTUM / NT; i++ ) 
+		for ( i = 0; i < QUANTUM; i++ ) 
 			if (dot.distance(rand.nextDouble(), rand.nextDouble()) <= 1)
 				localLessOne++;
 
